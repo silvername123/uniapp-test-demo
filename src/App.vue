@@ -11,7 +11,18 @@ onHide(() => {
 });
 </script>
 <style>
-@import url('tailwindcss/tailwind.css');
+@import url("tailwindcss/tailwind.css");
 @import url("@/static/iconfont/iconfont.css");
 
+/* #ifdef H5 */
+uni-page-head {
+  display: none;
+}
+uni-page-head[uni-page-head-type="default"] ~ uni-page-wrapper {
+  height: calc(100% - env(safe-area-inset-top));
+  overflow: auto;
+}
+
+
+/* #endif */
 </style>
