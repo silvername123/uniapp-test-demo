@@ -1,68 +1,45 @@
 <template>
-  <view class="flex h-full items-center justify-center">
-    <view class="rounded-sm w-4/5 sm:w-96">
-      <view
-        class="w-32 h-32 mx-auto rounded-full shadow-md overflow-hidden mt-20"
-      >
-        <img class="w-full" src="https://img.dowebok.com/8390.jpg" />
-      </view>
-      <view class="mt-8 p-4 rounded-2xl bg-white shadow-md">
-        <label class="text-gray-500">账号</label>
-        <view class="flex items-center mt-4">
-          <view class="iconfont icon-zhihangren"></view>
+  <div class="flex h-screen items-center justify-center" id="dowebok">
+    <div class="w-4/5 sm:w-96 text-sm">
+      <div class="w-32 h-32 mx-auto rounded-full shadow-md overflow-hidden">
+        <img class="w-full" src="https://img.dowebok.com/8390.jpg" alt="" />
+      </div>
+      <div class="mt-20 p-4 rounded-2xl bg-white shadow-md">
+        <label for="username" class="text-gray-500">电子邮箱</label>
+        <div class="flex items-center mt-4">
+          <i class="fa fa-fw fa-envelope-o text-gray-500"></i>
           <input
-            class="ml-2"
             type="text"
-            v-model="formValues.userName"
-            placeholder="please input user name "
-            placeholder-class="input-placeholder"
-            @input=""
+            id="username"
+            class="flex-1 mx-3 outline-none bg-transparent"
+            placeholder="请输入电子邮箱"
           />
-        </view>
-      </view>
-      <view class="mt-8 p-4 bg-white rounded-2xl shadow-md">
-        <label class="text-gray-500">密码</label>
-        <view class="flex items-center mt-4">
-          <view class="iconfont icon-mima"></view>
+        </div>
+      </div>
+      <div class="mt-7 p-4 rounded-2xl bg-white shadow-md">
+        <label for="password">密码</label>
+        <div class="flex items-center mt-4">
+          <i class="fa fa-fw fa-lock text-gray-500"></i>
           <input
-            class="ml-2"
-            v-model="formValues.password"
             type="password"
-            placeholder="please input password"
-            @input=""
+            id="password"
+            class="flex-1 mx-3 outline-none bg-transparent"
+            placeholder="请输入密码"
           />
-          <!-- <view
-            v-show="data.eyeStatus"
-            class="iconfont icon-eye_protection eyeIcon"
-            @click="changeEyeStatus()"
-          ></view>
-          <view
-            v-show="!data.eyeStatus"
-            class="iconfont icon-visible eyeIcon"
-            @click="changeEyeStatus()"
-          ></view> -->
-        </view>
-      </view>
-      <view class="mt-7 shadow-md rounded-full overflow-hidden">
-        <button class="w-full p-3 rounded-full login" @click="changeC()">
-          提交
+          <i class="fa fa-fw fa-eye text-gray-500"></i>
+        </div>
+      </div>
+      <div class="login mt-7 shadow-md rounded-full overflow-hidden">
+        <button class="w-full p-3 rounded-full text-white hover:opacity-90">
+          登 录
         </button>
-      </view>
-      <view class="flex justify-between text-xs mt-8">
-        <a href="" class="text-gray-500">注册</a>
-        <a href="" class="text-gray-500">忘记密码</a>
-      </view>
-    </view>
-  </view>
-  <view>
-    <uni-transition
-      :mode-class="data.modeClass"
-      :show="data.isShow"
-      class="rounded-2xl bg-gray-300 text-center shadow-md modal w-4/5"
-    >
-      {{ data.modalText }}
-    </uni-transition>
-  </view>
+      </div>
+      <div class="flex justify-between mt-7 text-xs">
+        <a href="javascript:" class="text-gray-500">注册</a>
+        <a href="javascript:" class="text-gray-500">忘记密码？</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
