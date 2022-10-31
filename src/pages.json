@@ -31,5 +31,23 @@
     "custom": {
       "uni-(.*)": "@/uni_modules/uni-ui/lib/uni-$1/uni-$1.vue"
     }
+  },
+  "tabBar": {
+    "color": "#847e7e",
+    "selectedColor": "#7b3e3e",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/logo.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/card/index",
+        "iconPath": "static/logo.png",
+        "text": "名片"
+      }
+    ]
   }
 }

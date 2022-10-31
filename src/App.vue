@@ -19,7 +19,7 @@ uni-page-head {
   display: none;
 }
 uni-page-head[uni-page-head-type="default"] ~ uni-page-wrapper {
-  height: calc(100% - env(safe-area-inset-top));
+  height: calc(100% - env(safe-area-inset-top)) !important;
   overflow: auto;
 }
 
