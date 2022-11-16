@@ -1,27 +1,9 @@
 <template>
-    <view class="content">
-      <!-- <view class="font-black">工作他</view>
-      <image class="logo" src="/static/logo.png" />
-      <view>
-        <text class="text-9xl">{{ data.date }}</text>
-        <text class="title">{{ title }}</text>
-        <button @click="changeC()">change text</button>
-      </view> -->
-      <!-- <view class="uni-form-item uni-column">
-        <uni-forms ref="formRef" :rules="rules" label-width="80px">
-          <uni-forms-item label="账号" required name="userName">
-            <uni-easyinput placeholder="请输入账号" />
-          </uni-forms-item>
-          <uni-forms-item label="密码" required name="password">
-            <uni-easyinput type="password" placeholder="请输入密码" />
-          </uni-forms-item>
-        </uni-forms>
-        <button class=""></button>
-      </view> -->
+    <test-slot></test-slot>
+    <!-- <view class="content">
       <div class="flex h-screen items-center justify-center" id="dowebok">
         <div class="w-4/5 sm:w-96 text-sm">
           <div class="w-32 h-32 mx-auto rounded-full shadow-md overflow-hidden">
-            <!-- <img class="w-full" src="https://img.dowebok.com/8390.jpg" alt="" /> -->
           </div>
           <div class="mt-20 p-4 rounded-2xl bg-white shadow-md">
             <label for="username" class="text-gray-500">电子邮箱</label>
@@ -59,10 +41,11 @@
           </div>
         </div>
       </div>
-    </view>
+    </view> -->
   </template>
   
   <script setup lang="ts">
+  import testSlot from "./testSlot.vue"
   import { reactive, ref } from "vue";
   const title = ref("Hello");
   const data = reactive({
