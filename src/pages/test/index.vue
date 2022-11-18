@@ -1,6 +1,22 @@
 <template>
-    <test-slot></test-slot>
-    <!-- <view class="content">
+  <test-slot></test-slot>
+  <view>
+    {{ data.title }}
+  </view>
+  <view>
+    <sys-input-vue
+      @on-input="changeInput"
+      v-model="data.title"
+      :text="data.title"
+    />
+  </view>
+  <view>
+    <sys-button-vue :text="data.title" @test-b="changeC" :data="data"
+  /></view>
+  <view>
+    <sys-list-vue></sys-list-vue>
+  </view>
+  <!-- <view class="content">
       <div class="flex h-screen items-center justify-center" id="dowebok">
         <div class="w-4/5 sm:w-96 text-sm">
           <div class="w-32 h-32 mx-auto rounded-full shadow-md overflow-hidden">
@@ -42,36 +58,57 @@
         </div>
       </div>
     </view> -->
-  </template>
-  
-  <script setup lang="ts">
-  import testSlot from "./testSlot.vue"
-  import { reactive, ref } from "vue";
-  const title = ref("Hello");
-  const data = reactive({
-    date: "1",
-  });
-  const changeC = () => {
-    title.value = "test ref";
-    data.date = "test reactive";
-  };
-  const rules = reactive({});
-  </script>
-  
-  <style>
-  /* .content {
+</template>
+
+<script setup lang="ts">
+import testSlot from "./testSlot.vue";
+import sysButtonVue from "./sysButton.vue";
+import sysInputVue from "./sysInput.vue";
+import { reactive, ref } from "vue";
+import sysListVue from "./sysList.vue";
+
+export interface dataRefType {
+  first?: string;
+  second?: string;
+  length?: number;
+  [key: string]: any;
+}
+interface localDataType {
+  date: number;
+  title: string | undefined;
+}
+const text = ref<dataRefType>();
+const data = reactive<localDataType>({
+  date: 1,
+  title: undefined,
+});
+const changeC = () => {
+  text.value = { first: "2" };
+  data.date = 2;
+  data.title = "改变值";
+};
+const changeInput = (e: any) => {
+  console.log("e", e);
+  console.log(data.title);
+  console.log(e.target.value);
+};
+const rules = reactive({});
+</script>
+
+<style>
+/* .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   } */
-  
-  /* page {
+
+/* page {
     height: 100%;
     overflow: hidden;
     background: linear-gradient(140deg, rgb(105 168 222) 40%, rgb(25 97 160));
   } */
-  /* .logo {
+/* .logo {
     height: 200rpx;
     width: 200rpx;
     margin-top: 200rpx;
@@ -89,5 +126,4 @@
     font-size: 36rpx;
     color: #8f8f94;
   } */
-  </style>
-  
+</style>

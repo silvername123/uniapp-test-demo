@@ -83,10 +83,6 @@ const changeC = () => {
       title: data.modalText,
       icon: "none",
     });
-    // data.isShow = true;
-    // setTimeout(() => {
-    //   data.isShow = false;
-    // }, 2000);
     return;
   } else {
     data.isShow = false;
